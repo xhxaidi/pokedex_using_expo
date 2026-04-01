@@ -1,51 +1,39 @@
-# Welcome to your Expo app 👋
+# Pokédex App 📱
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple mobile app built with **Expo** and **React Native** to learn the basics of mobile development and API integration.
 
-## Get started
+## What it does
 
-1. Install dependencies
+Fetches and displays a list of Pokémon from the [PokéAPI](https://pokeapi.co/), showing each Pokémon's name, type, and sprites — color coded by type.
 
-   ```bash
-   npm install
-   ```
+## Built with
 
-2. Start the app
+- [Expo](https://expo.dev/) + Expo Router
+- React Native
+- TypeScript
+- Axios
 
-   ```bash
-   npx expo start
-   ```
+## What I learned
 
-In the output, you'll find options to open the app in a
+- Setting up an Expo project from scratch
+- Fetching data with Axios using `async/await` and `try/catch`
+- Using `Promise.all` to fetch multiple API endpoints in parallel
+- Typing API responses with TypeScript interfaces
+- Rendering lists with `ScrollView` and `.map()`
+- Basic React Native styling with `StyleSheet`
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Running locally
 
 ```bash
-npm run reset-project
+bun install
+bun run start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Scan the QR code with **Expo Go** on your phone.
 
-## Learn more
+## API
 
-To learn more about developing your project with Expo, look at the following resources:
+Uses the free [PokéAPI](https://pokeapi.co/) — no auth required.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-# pokedex_using_expo
+- List endpoint: `GET https://pokeapi.co/api/v2/pokemon/?limit=20`
+- Detail endpoint: `GET https://pokeapi.co/api/v2/pokemon/{name}`
