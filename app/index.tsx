@@ -1,7 +1,7 @@
-import { Link } from "expo-router";
 import axios from "axios";
+import { Link } from "expo-router";
 import { useEffect, useState } from "react";
-import { Image, Text, View, ScrollView, StyleSheet } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 interface Pokemon {
   name: string;
@@ -95,7 +95,11 @@ export default function Index() {
       }}
     >
       {pokemons.map((pokemon: any) => (
-        <Link key={pokemon.name} href="/details">
+        <Link
+          key={pokemon.name}
+          href={{ pathname: "/details", params: { name: pokemon.name } }}
+        >
+          {" "}
           <View
             style={{
               backgroundColor: colorsByType[pokemon.types[0]?.type.name] + 60,

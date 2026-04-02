@@ -14,6 +14,7 @@ export default function RootLayout() {
         options={{
           title: "Pokemon Details",
           headerBackButtonDisplayMode: "minimal",
+          presentation: "formSheet",
         }}
       />
     </Stack>
